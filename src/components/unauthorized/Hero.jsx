@@ -5,7 +5,6 @@ import kids_helping from "../../assets/kids-helping.png";
 export default function Hero() {
   return (
     <section className="hero-section">
-      <header></header>
       <div className="main-info-box">
         <div className="hero-box">
           <img

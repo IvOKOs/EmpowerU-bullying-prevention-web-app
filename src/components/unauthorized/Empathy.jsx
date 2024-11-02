@@ -18,7 +18,11 @@ export default function Empathy() {
               allowFullScreen
             ></iframe>
           </div>
-          <img className="sad-kid" src={sad_kid} />
+          <img
+            className="sad-kid"
+            src={sad_kid}
+            alt="A sad boy sitting on the ground, wrapped his arms around his legs and crying."
+          />
         </div>
         <p className="second-text">...together we can make a difference!</p>
       </div>
