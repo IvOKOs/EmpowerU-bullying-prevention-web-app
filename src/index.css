@@ -15,7 +15,7 @@ Default: 1
 --------COLORS
 Use darker text on the yellow section (dark gray or navy), while you can use white or medium gray on the blue section to maintain contrast
 - PRIMARY: #ffecb3, #ffcc80, orrrr #fff3e0, #ffe0b2 = pure black text / #c5cae9, #bbdefb orrr #e8eaf6, #e3f2fd = pure black text
-- TINTS: #333333
+- TINTS: #333
 - SHADES: #e6b873, #cca366
 
 --------BORDER-RADIUS
@@ -32,9 +32,9 @@ Use darker text on the yellow section (dark gray or navy), while you can use whi
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Comic Neue", cursive;
   line-height: 1;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 html {

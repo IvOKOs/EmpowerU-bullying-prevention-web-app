@@ -1,0 +1,32 @@
+.empathy-section {
+  background: linear-gradient(to bottom, #c5cae9, #bbdefb, #ffecb3);
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  gap: 7rem;
+  max-width: 160rem;
+  height: 100rem;
+  margin: 0 auto;
+  padding: 10rem 0;
+}
+
+.content-box p {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.video-pic-box {
+  display: flex;
+  gap: 2rem;
+  align-self: flex-end;
+  justify-content: center;
+}
+
+.sad-kid {
+  align-self: flex-end;
+  max-width: 20%;
+  max-height: 80%;
+}
