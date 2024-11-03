@@ -3,13 +3,12 @@
 }
 
 .content-box {
-  display: flex;
-  flex-direction: column;
-  gap: 7rem;
-  max-width: 160rem;
-  height: 100rem;
+  height: 90rem;
   margin: 0 auto;
-  padding: 10rem 0;
+  padding: 0rem 0 15rem 0;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0;
 }
 
 .content-box p {
@@ -18,15 +17,25 @@
   font-weight: 600;
 }
 
-.video-pic-box {
-  display: flex;
-  gap: 2rem;
+.first-text {
+  grid-column: 1 / 4;
   align-self: flex-end;
-  justify-content: center;
+}
+
+.video-box {
+  grid-row: 2 / 3;
+  grid-column: 2 / 3;
+}
+
+.second-text {
+  grid-row: 3 / 4;
+  grid-column: 1 / 4;
+  align-self: flex-start;
 }
 
 .sad-kid {
-  align-self: flex-end;
-  max-width: 20%;
+  grid-row: 2 / 3;
+  grid-column: 3 / 4;
+  max-width: 80%;
   max-height: 80%;
 }

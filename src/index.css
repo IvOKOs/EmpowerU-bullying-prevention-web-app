@@ -13,8 +13,7 @@ Default: 1
 - SPACING SYSTEM
 
 --------COLORS
-Use darker text on the yellow section (dark gray or navy), while you can use white or medium gray on the blue section to maintain contrast
-- PRIMARY: #ffecb3, #ffcc80, orrrr #fff3e0, #ffe0b2 = pure black text / #c5cae9, #bbdefb orrr #e8eaf6, #e3f2fd = pure black text
+- PRIMARY: #ffecb3, #ffcc80= pure black text / #c5cae9, #bbdefb= pure black text
 - TINTS: #333
 - SHADES: #e6b873, #cca366
 
@@ -39,4 +38,18 @@ body {
 
 html {
   font-size: 62.5%;
+}
+
+.container {
+  max-width: 150rem;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 5rem;
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
 }

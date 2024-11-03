@@ -1,0 +1,50 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  grid-row: 2 / 2;
+}
+
+.card-icon {
+  max-height: 6rem;
+  max-width: 6rem;
+  background-color: #fda274;
+  border: 3px solid #fd8b51;
+  border-radius: 50%;
+  padding: 1rem;
+  align-self: center;
+}
+
+.card-text-box {
+  height: 25rem;
+  padding: 3rem 4rem;
+  font-size: 2.2rem;
+  border: 2px solid #fd8b51;
+  border-radius: 10px;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+  font-size: 2.9rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.features-descr-box {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.features-descr-box:last-child {
+  margin-bottom: 0;
+}
+
+.check {
+  height: 3rem;
+}
+
+.feature-description {
+  align-self: center;
+}
