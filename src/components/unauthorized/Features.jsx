@@ -3,7 +3,7 @@ import FeaturesCard from "../general/FeaturesCard";
 import book from "../../assets/book.png";
 import group from "../../assets/team-building.png";
 import chat from "../../assets/chat.png";
-
+// this below should be extracted into a TextResources file and imported into this file
 const resourcesDescriptions = [
   {
     id: 1,

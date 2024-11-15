@@ -6,7 +6,6 @@ export default function Empathy() {
     <section className="empathy-section">
       <div className="content-box container grid grid--3-cols">
         <p className="first-text">You are NOT alone...</p>
-        {/* <div className="video-pic-box"> */}
         <div className="video-box">
           <iframe
             width="660"
@@ -23,7 +22,6 @@ export default function Empathy() {
           src={sad_kid}
           alt="A sad boy sitting on the ground, wrapped his arms around his legs and crying."
         />
-        {/* </div> */}
         <p className="second-text">...together we can make a difference!</p>
       </div>
     </section>
