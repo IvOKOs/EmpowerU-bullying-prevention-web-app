@@ -1,3 +1,34 @@
+.stories-section {
+  background: linear-gradient(to bottom, #c5cae9, #bbdefb, #ffecb3);
+}
+
+.stories-main-box {
+  padding-bottom: 30rem;
+}
+
 .stories-text-box {
+  margin: 0 auto;
+  max-width: 60%;
   text-align: center;
+}
+
+.stories-box {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+.stories-title {
+  font-size: 5.5rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.stories-sub-text {
+  font-size: 2.2rem;
+  font-weight: 300;
+  margin-bottom: 6rem;
+  line-height: 1.5;
 }

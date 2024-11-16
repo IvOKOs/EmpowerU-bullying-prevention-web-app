@@ -1,0 +1,33 @@
+.story-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5rem;
+  border: 2px solid #839bb0;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1.2rem 2.4rem rgba(0, 0, 0, 0.1);
+}
+
+.story-img-box {
+  max-width: 100%;
+}
+
+.story-img {
+  max-width: 30%;
+}
+
+.story-box.right .story-text {
+  order: 1;
+}
+
+.story-box.right img {
+  order: 2;
+}
+
+.story-text {
+  font-size: 2rem;
+  line-height: 1.25;
+  font-weight: 300;
+  padding: 3rem;
+}

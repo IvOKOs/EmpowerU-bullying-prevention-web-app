@@ -1,12 +1,10 @@
+import "./Story.css";
+
 export default function Story({ text, image, imgPosition }) {
   return (
-    <article className="story-box">
-      <div>
-        <img src={image} />
-      </div>
-      <div>
-        <p>{text}</p>
-      </div>
+    <article className={`story-box ${imgPosition}`}>
+      <img className="story-img" src={image} alt={text} />
+      <p className="story-text">{text}</p>
     </article>
   );
 }

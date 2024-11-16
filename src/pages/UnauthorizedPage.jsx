@@ -1,6 +1,7 @@
 import Empathy from "../components/unauthorized/Empathy";
 import Features from "../components/unauthorized/Features";
 import Hero from "../components/unauthorized/Hero";
+import Stories from "../components/unauthorized/Stories";
 
 export default function UnauthorizedPage() {
   return (
@@ -8,6 +9,7 @@ export default function UnauthorizedPage() {
       <Hero />
       <Empathy />
       <Features />
+      <Stories />
     </>
   );
 }
