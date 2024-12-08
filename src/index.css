@@ -45,6 +45,11 @@ html {
   margin: 0 auto;
 }
 
+.container-md {
+  max-width: 100rem;
+  margin: 0 auto;
+}
+
 .grid {
   display: grid;
   gap: 5rem;

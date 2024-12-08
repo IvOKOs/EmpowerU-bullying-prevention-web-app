@@ -1,0 +1,71 @@
+.report-intro-section {
+  background: linear-gradient(to bottom, #ffecb3, #ffcc80, #c5cae9);
+}
+
+.form-title {
+  text-align: center;
+  font-size: 4.4rem;
+}
+
+.form-text {
+  text-align: center;
+  font-size: 2.4rem;
+}
+
+.notebook-page {
+  position: relative;
+  max-width: 600px;
+  height: 600px;
+  background: repeating-linear-gradient(
+    to bottom,
+    #ffffff,
+    #ffffff 2rem,
+    #d9eaff 2.1rem /* Blue lines */
+  );
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 1rem 5rem;
+  overflow: hidden;
+}
+
+.holes {
+  position: absolute;
+  top: 0;
+  left: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 100%;
+}
+
+.holes::before,
+.holes::after,
+.holes > div {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #ffcc80;
+  border: 1px solid #c3c3c3;
+  border-radius: 50%;
+  margin: 5px 0;
+}
+
+.hole {
+  width: 10px;
+  height: 10px;
+  background-color: #ffcc80;
+  border: 1px solid #c3c3c3;
+  border-radius: 50%;
+  margin: 5px 0;
+}
+
+.content {
+  padding: 5rem 0;
+  font-family: "Indie Flower", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: #333;
+}
