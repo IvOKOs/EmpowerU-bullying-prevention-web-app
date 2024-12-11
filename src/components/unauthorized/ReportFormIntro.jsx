@@ -32,7 +32,7 @@ export default function ReportFormIntro() {
           If you witness or experience bullying, our anonymous reporting tool
           allows you to share what happened without revealing your identity.
         </p>
-        <p>Together, we can fight back!</p>
+        <p className="form-text">Together, we can fight back!</p>
         <div class="notebook-page">
           <div className="holes">
             {holes.map((_, index) => (
@@ -40,10 +40,91 @@ export default function ReportFormIntro() {
             ))}
           </div>
           <div class="content">
-            <p>Dear Reporting Form</p>
+            <p>Dear Friend, 👋</p>
             <br />
-            Today, someone pushed me during lunch, and it hurt my feelings. This
-            is where I can tell someone who will help. Thank you, Alex
+            <p>
+              I saw something at school today that made me feel really sad… 😔
+              There was a kid being bullied, and it wasn’t right. So, I wanted
+              to tell someone but in a safe way, just like this!
+            </p>
+            <br />
+            <p>Here’s how I did it:</p>
+            <br />
+            <ol>
+              <li>
+                <p>
+                  <strong>What happened?</strong>
+                </p>
+                <p>
+                  I wrote down what I saw. It can be anything like mean words,
+                  pushing, or even online stuff. There are some checkboxes to
+                  help you pick the right one. I chose{" "}
+                  <span className="marked-word">verbal bullying</span> because
+                  they were saying mean things. 📢
+                </p>
+              </li>
+              <br />
+              <li>
+                <p>
+                  <strong>Where did it happen?</strong>
+                </p>
+                <p>
+                  I told them where it happened, like in the school hallway or
+                  playground. I just clicked on the place that matched. I picked
+                  <span className="marked-word">classroom</span>
+                </p>
+              </li>
+              <br />
+              <li>
+                <p>
+                  <strong>Who saw it? 👀</strong>
+                  (This part is extra but helpful!)
+                </p>
+                <p>
+                  I added names of other kids who saw it, just in case they can
+                  help too! It’s okay if you don’t know their names.
+                </p>
+              </li>
+              <br />
+              <li>
+                <p>
+                  <strong>How bad was it?</strong>
+                </p>
+                <p>
+                  There’s a part where you can say how serious it was, like if
+                  it was a little mean or super hurtful. I chose{" "}
+                  <span className="marked-word">pretty serious</span>. 😟
+                </p>
+              </li>
+              <br />
+              <li>
+                <p>
+                  <strong>Extra stuff</strong>
+                </p>
+                <p>
+                  If you want, you can write more things that you think are
+                  important. I told them how the bully always does this to the
+                  same kid.
+                </p>
+              </li>
+              <br />
+              <li>
+                <p>
+                  <strong>Your Secret is Safe! 🔒</strong>
+                </p>
+                <p>
+                  Don’t worry, nobody will know it’s you. I promise! Just hit
+                  the “Submit” button when you’re done, and you’re helping
+                  someone/yourself out.
+                </p>
+              </li>
+            </ol>
+            <br />
+            <br />
+            <p>Thanks for being brave and kind!</p>
+            <br />
+            <p>Love,</p>
+            <p>A Friend 🧡</p>
           </div>
         </div>
       </div>
