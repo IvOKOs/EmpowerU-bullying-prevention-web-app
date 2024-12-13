@@ -1,0 +1,106 @@
+.footer {
+  background: linear-gradient(to bottom, #c5cae9, #bbdefb);
+  padding: 5rem 0 2rem;
+}
+
+.notifications-box {
+  padding-bottom: 25rem;
+}
+
+.footer p {
+  font-weight: 400;
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.footer .question {
+  font-size: 3.6rem;
+  font-weight: bold;
+}
+
+.footer form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding-top: 6rem;
+}
+
+.footer input {
+  font-size: 2rem;
+  width: 45rem;
+  height: 4rem;
+  border: none;
+  border-radius: 15px;
+  padding: 1rem 2rem;
+}
+
+.footer-btn {
+  font-size: 2rem;
+  font-weight: 400;
+  padding: 0.85rem 3rem;
+  border: none;
+  border-radius: 15px;
+  background-color: #6439ff;
+  color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.footer-btn:hover {
+  cursor: pointer;
+  background-color: transparent;
+  color: #6439ff;
+  box-shadow: inset 0 0 0 2px #6439ff;
+}
+
+.links-container {
+  width: 100vw;
+  border-top: 1px solid #000;
+}
+
+.links-grid {
+  margin: 0 auto;
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 5rem;
+  align-items: center;
+  justify-items: center;
+  padding-top: 5rem;
+}
+
+.copyright {
+  font-size: 1.6rem !important;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  align-self: center;
+  justify-self: start;
+}
+
+.copyright-symbol {
+  font-size: 2.5rem !important;
+  vertical-align: middle;
+}
+
+.policies {
+  font-size: 2rem;
+  grid-column: 2 / 3;
+  display: flex;
+  gap: 3rem;
+  justify-self: end;
+}
+
+.policies a {
+  text-decoration: none;
+}
+
+.logos {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  display: flex;
+  gap: 2rem;
+  font-size: 2.5rem;
+  justify-self: end;
+}
