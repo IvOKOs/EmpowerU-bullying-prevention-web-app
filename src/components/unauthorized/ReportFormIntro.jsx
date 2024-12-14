@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import "./ReportFormIntro.css";
 import { useState } from "react";
+import confidentGirl from "../../assets/confident-girl.png";
+import pencil from "../../assets/pencil.png";
 
 export default function ReportFormIntro() {
   const [holes, setHoles] = useState([]);
@@ -33,6 +35,10 @@ export default function ReportFormIntro() {
           allows you to share what happened without revealing your identity.
         </p>
         <p className="form-text">Together, we can fight back!</p>
+      </div>
+
+      <div className="content-grid">
+        <img className="girl-img" src={confidentGirl} alt="" />
         <div class="notebook-page">
           <div className="holes">
             {holes.map((_, index) => (
@@ -127,6 +133,7 @@ export default function ReportFormIntro() {
             <p>A Friend 🧡</p>
           </div>
         </div>
+        <img className="pencil" src={pencil} alt="" />
       </div>
     </section>
   );
