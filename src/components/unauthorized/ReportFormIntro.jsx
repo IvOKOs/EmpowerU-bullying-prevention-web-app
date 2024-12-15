@@ -38,7 +38,11 @@ export default function ReportFormIntro() {
       </div>
 
       <div className="content-grid">
-        <img className="girl-img" src={confidentGirl} alt="" />
+        <img
+          className="girl-img"
+          src={confidentGirl}
+          alt="A confident, rebelious teen girl looking at the screen with a brief smile"
+        />
         <div class="notebook-page">
           <div className="holes">
             {holes.map((_, index) => (
@@ -133,7 +137,7 @@ export default function ReportFormIntro() {
             <p>A Friend 🧡</p>
           </div>
         </div>
-        <img className="pencil" src={pencil} alt="" />
+        <img className="pencil" src={pencil} alt="A pencil" />
       </div>
     </section>
   );

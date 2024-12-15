@@ -24,8 +24,12 @@ export default function Footer() {
             <span className="copyright-symbol">&copy;</span>2024 EmpowerU
           </div>
           <div className="policies">
-            <a href="/">Policy</a>
-            <a href="/">Terms of Service</a>
+            <a className="policy" href="/">
+              Policy
+            </a>
+            <a className="terms" href="/">
+              Terms of Service
+            </a>
           </div>
           <div className="logos">
             <a href="/">

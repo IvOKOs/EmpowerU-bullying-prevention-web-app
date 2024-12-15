@@ -92,8 +92,14 @@
   justify-self: end;
 }
 
-.policies a {
+.policy,
+.terms {
   text-decoration: none;
+}
+
+.policy:hover,
+.terms:hover {
+  text-decoration: underline;
 }
 
 .logos {
