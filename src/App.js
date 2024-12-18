@@ -1,20 +1,28 @@
 import "./App.css";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
-import Navigation from "./components/general/Navigation";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import RootLayout from "./components/general/RootLayout";
+import Register from "./components/auth/Register";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout />,
+    children: [
+      {
+        path: "/",
+        element: <UnauthorizedPage />,
+      },
+    ],
+  },
+  {
+    path: "/register",
+    element: <Register />,
+  },
+]);
 
 function App() {
-  return (
-    <>
-      <Navigation navBarStyle="unauthorized">
-        <div className="auth-box">
-          <button>Sign Up</button>
-          <p>/</p>
-          <button>Log In</button>
-        </div>
-      </Navigation>
-      <UnauthorizedPage />
-    </>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;
