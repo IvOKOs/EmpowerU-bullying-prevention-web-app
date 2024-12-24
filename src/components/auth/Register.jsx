@@ -1,5 +1,6 @@
 import styles from "./Register.module.css";
 import greetingKids from "../../assets/greeting-kids.png";
+import { useEffect } from "react";
 
 export default function Register() {
   function handleSubmit(e) {
@@ -78,18 +79,17 @@ export default function Register() {
         </div>
         <button className={styles.btn}>Let's Do This!</button>
       </form>
-      <div className={styles.recoveryContentBox}>
-        <div className={styles.recoveryBox}>
-          <p className={styles.recoveryTitle}>Already have an account?</p>
-          <p>Welcome back, hero!</p>
-          <a href="/">Click here to log-in.</a>
-        </div>
-        <div className={styles.recoveryBox}>
+      <div className={styles.recoveryBox}>
+        <p className={styles.recoveryTitle}>Already have an account?</p>
+        <p>
+          Welcome back, hero! <a href="/">Click here to log-in.</a>
+        </p>
+      </div>
+      {/* <div className={styles.recoveryBox}>
           <p className={styles.recoveryTitle}>Forgot password?</p>
           <p>No worries - we've got your back!</p>
           <a href="/">Recover it here.</a>
-        </div>
-      </div>
+        </div> */}
     </article>
   );
 }
