@@ -1,0 +1,151 @@
+.registerBox {
+  margin: 0 auto;
+  max-width: 40vw;
+  padding: 2rem 4rem;
+  border: 1px solid #000;
+}
+
+.registerIntroBox {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 3.5rem;
+}
+
+/* .subTitle {
+  font-size: 2.2rem;
+} */
+
+.logo {
+  width: 6rem;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.formInputs {
+  width: 100%;
+  grid-column: 1 / 2;
+  align-self: center;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.input {
+  height: 3.5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9px;
+  border: 1px solid #000;
+}
+
+.nameBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.nameInputBox {
+  display: flex;
+  gap: 1rem;
+}
+
+.nameBox p {
+  margin-left: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.passBox {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.nameInputBox .question {
+  justify-self: end;
+}
+
+.question {
+  align-self: center;
+  justify-self: center;
+  font-size: 1.2rem;
+  border: 1px solid #000;
+  border-radius: 50%;
+  padding: 0.2rem 0.7rem;
+}
+
+.question:hover {
+  cursor: pointer;
+}
+
+.passBox input {
+  width: 100%;
+}
+
+.greetingKids {
+  max-width: 20rem;
+  grid-column: 2 / 3;
+  align-self: center;
+  justify-self: center;
+}
+
+.guidelinesBox {
+  grid-column: 1 / 3;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.guidelinesCheckBox {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.guidelinesBox p {
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+}
+
+.btn {
+  grid-column: 1 / 3;
+  width: 20rem;
+  margin: 3rem auto 3rem;
+  padding: 1rem 2rem;
+  font-size: 1.8rem;
+  border: 1px solid #000;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+.recoveryContentBox {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+
+.recoveryBox {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.recoveryTitle {
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
