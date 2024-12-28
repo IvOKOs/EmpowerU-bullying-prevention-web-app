@@ -1,7 +1,10 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import animations from "../../animations/animationTypes";
 import Navigation from "./Navigation";
 
 export default function RootLayout() {
+  const location = useLocation();
   return (
     <>
       <Navigation navBarStyle="unauthorized">
@@ -13,7 +16,16 @@ export default function RootLayout() {
           <Link className="nav-link">Log In</Link>
         </div>
       </Navigation>
-      <Outlet />
+      <motion.div
+        key={location.pathname}
+        variants={animations.fadeInOut}
+        initial="initial"
+        animate="animate"
+        exit="exit"
+        transition={{ duration: 0.5 }}
+      >
+        <Outlet />
+      </motion.div>
     </>
   );
 }

@@ -43,13 +43,13 @@ export default function ReportFormIntro() {
           src={confidentGirl}
           alt="A confident, rebelious teen girl looking at the screen with a brief smile"
         />
-        <div class="notebook-page">
+        <div className="notebook-page">
           <div className="holes">
             {holes.map((_, index) => (
               <div key={index} className="hole"></div>
             ))}
           </div>
-          <div class="content">
+          <div className="content">
             <p>Dear Friend, 👋</p>
             <br />
             <p>

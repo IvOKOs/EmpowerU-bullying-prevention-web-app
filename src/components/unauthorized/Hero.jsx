@@ -1,6 +1,7 @@
 import "./Hero.css";
 import boy from "../../assets/boy-standing.png";
 import kids_helping from "../../assets/kids-helping.png";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -25,7 +26,9 @@ export default function Hero() {
             alt="A standing cheerful boy with crossed arms looking at the user."
           />
         </div>
-        <button className="hero-btn">Help yourself!</button>
+        <Link to="/register" className="hero-btn">
+          Help yourself!
+        </Link>
       </div>
     </section>
   );

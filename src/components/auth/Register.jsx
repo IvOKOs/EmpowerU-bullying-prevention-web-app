@@ -1,11 +1,9 @@
 import styles from "./Register.module.css";
 import greetingKids from "../../assets/greeting-kids.png";
-import { useEffect } from "react";
 
 export default function Register() {
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(":)");
   }
 
   return (
