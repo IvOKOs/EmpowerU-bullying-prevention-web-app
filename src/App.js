@@ -4,6 +4,7 @@ import { AnimatePresence } from "framer-motion";
 import RootLayout from "./components/general/RootLayout";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
 import Register from "./components/auth/Register";
+import Login from "./components/auth/Login";
 import PageTransition from "./pages/PageTransition";
 
 const router = createBrowserRouter([
@@ -22,6 +23,14 @@ const router = createBrowserRouter([
     element: (
       <PageTransition>
         <Register />
+      </PageTransition>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <PageTransition>
+        <Login />
       </PageTransition>
     ),
   },

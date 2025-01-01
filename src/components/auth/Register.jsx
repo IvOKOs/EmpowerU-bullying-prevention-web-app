@@ -1,6 +1,7 @@
 import styles from "./Register.module.css";
 import greetingKids from "../../assets/greeting-kids.png";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Register() {
   const [isKidRole, setIsKidRole] = useState(true);
@@ -165,18 +166,13 @@ export default function Register() {
             {isKidRole ? "Let's Do This!" : "Let's Begin!"}
           </button>
         </form>
-        <div className={styles.recoveryBox}>
-          <p className={styles.recoveryTitle}>Already have an account?</p>
+        <div className={styles.linksBox}>
+          <p className={styles.loginTitle}>Already have an account?</p>
           <p>
             Welcome back{isKidRole ? ", hero! " : "! "}
-            <a href="/">Click here to log-in.</a>
+            <Link to="/login">Click here to log-in.</Link>
           </p>
         </div>
-        {/* <div className={styles.recoveryBox}>
-          <p className={styles.recoveryTitle}>Forgot password?</p>
-          <p>No worries - we've got your back!</p>
-          <a href="/">Recover it here.</a>
-        </div> */}
       </article>
     </div>
   );

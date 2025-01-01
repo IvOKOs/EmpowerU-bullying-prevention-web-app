@@ -13,7 +13,9 @@ export default function RootLayout() {
             Sign Up
           </Link>
           <p>/</p>
-          <Link className="nav-link">Log In</Link>
+          <Link to="/login" className="nav-link">
+            Log In
+          </Link>
         </div>
       </Navigation>
       <motion.div

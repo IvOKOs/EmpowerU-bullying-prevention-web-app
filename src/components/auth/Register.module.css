@@ -184,7 +184,7 @@ body {
   animation: bounce 0.3s ease-in-out;
 }
 
-.recoveryBox {
+.linksBox {
   margin: 0 auto;
   width: 60%;
   display: flex;
@@ -194,7 +194,7 @@ body {
   text-align: center;
 }
 
-.recoveryTitle {
+.loginTitle {
   font-weight: 600;
   margin-bottom: 0.3rem;
 }
