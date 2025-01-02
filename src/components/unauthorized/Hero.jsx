@@ -26,7 +26,7 @@ export default function Hero() {
             alt="A standing cheerful boy with crossed arms looking at the user."
           />
         </div>
-        <Link to="/register" className="hero-btn">
+        <Link to="/dashboard" className="hero-btn">
           Help yourself!
         </Link>
       </div>

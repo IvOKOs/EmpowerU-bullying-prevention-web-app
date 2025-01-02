@@ -2,10 +2,15 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
 import RootLayout from "./components/general/RootLayout";
-import UnauthorizedPage from "./pages/UnauthorizedPage";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PageTransition from "./pages/PageTransition";
+import UnauthorizedPage from "./pages/UnauthorizedPage";
+import Dashboard from "./pages/Dashboard";
+
+function isAuthorized() {
+  return false;
+}
 
 const router = createBrowserRouter([
   {
@@ -14,8 +19,9 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <UnauthorizedPage />,
+        element: isAuthorized() ? <></> : <UnauthorizedPage />,
       },
+      { path: "/dashboard", element: <Dashboard /> },
     ],
   },
   {
