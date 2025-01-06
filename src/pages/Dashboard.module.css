@@ -1,4 +1,63 @@
 .mainBox {
   height: 100vh;
+
   background: linear-gradient(to bottom, #ffecb3, #ffcc80);
+}
+
+.containerBox {
+  max-width: 130rem;
+  margin: 0 auto;
+  padding-top: 5rem;
+}
+
+.mainInfo {
+  grid-column: 1 / 2;
+}
+
+.greetingBox {
+  display: flex;
+  gap: 2rem;
+}
+
+.greetingBox header {
+  font-size: 4rem;
+  align-self: center;
+}
+
+.profilePic {
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid greenyellow;
+  border-radius: 50%;
+}
+
+.affirmation {
+  font-size: 1.5rem;
+  margin-top: 3rem;
+  padding-left: 2rem;
+}
+
+.meterHelpBox {
+  grid-column: 3 / 4;
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+}
+
+.meterBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.meter {
+  width: 20rem;
+  height: 3rem;
+  border-radius: 10px;
+  background-color: aquamarine;
+}
+
+.meterTasks {
+  font-size: 2.5rem;
 }
