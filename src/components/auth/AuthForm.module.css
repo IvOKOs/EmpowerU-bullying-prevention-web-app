@@ -178,6 +178,17 @@
   transform: translateX(-50%) translateY(-10px); /* slide up animation */
 }
 
+.inputBox {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: red;
+}
+
 @keyframes bounce {
   0%,
   100% {
