@@ -7,8 +7,11 @@ import {
   passwordsMatch,
 } from "../../util/validation";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { sendUserData } from "../../store/auth-slice";
 
 export default function AuthForm({ isKidRole = false, isRegister }) {
+  const dispatch = useDispatch();
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
     username: "",
@@ -71,6 +74,13 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
     if (errors.length > 0) {
       alert("Please fix the errors before submitting.");
       return;
+    }
+    if (!isRegister) {
+      const loginData = {
+        email: formData.email,
+        password: formData.password,
+      };
+      dispatch(sendUserData(loginData));
     }
     console.log("Form submitted successfully!", formData);
   }

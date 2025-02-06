@@ -8,10 +8,6 @@ import PageTransition from "./pages/PageTransition";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
 import Dashboard from "./pages/Dashboard";
 
-function isAuthorized() {
-  return false;
-}
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -19,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: isAuthorized() ? <Dashboard /> : <UnauthorizedPage />,
+        element: <UnauthorizedPage />,
       },
       { path: "/dashboard", element: <Dashboard /> },
     ],
