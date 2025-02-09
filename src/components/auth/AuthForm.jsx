@@ -8,10 +8,12 @@ import {
 } from "../../util/validation";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { sendUserData } from "../../store/auth-slice";
+import { sendUserData, authActions } from "../../store/auth-slice";
+import { useNavigate } from "react-router-dom";
 
 export default function AuthForm({ isKidRole = false, isRegister }) {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
     username: "",
@@ -20,6 +22,7 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
     password: "",
     passwordRe: "",
     guidelinesCheck: false,
+    role: 0,
   });
   let content;
 
@@ -63,26 +66,39 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
   function handleChange(e) {
     const { name, value, type, checked } = e.target;
     const fieldValue = type === "checkbox" ? checked : value;
-
     setFormData((prev) => ({ ...prev, [name]: fieldValue }));
     validate(name, fieldValue);
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
-    const errors = Object.values(formErrors).filter((error) => error);
+    const errors = Object.values(formErrors).some((error) => error);
     if (errors.length > 0) {
       alert("Please fix the errors before submitting.");
       return;
     }
-    if (!isRegister) {
-      const loginData = {
-        email: formData.email,
-        password: formData.password,
-      };
-      dispatch(sendUserData(loginData));
+    if (!isKidRole) {
+      setFormData((curr) => {
+        return {
+          ...curr,
+          role: 1,
+        };
+      });
     }
-    console.log("Form submitted successfully!", formData);
+    const result = await dispatch(sendUserData(formData, isRegister));
+    if (!result.error) {
+      if (result.access_token) {
+        localStorage.setItem("token", result.access_token);
+        localStorage.setItem("role", result.role);
+      }
+      dispatch(authActions.authenticate());
+      navigate("/dashboard");
+    } else {
+      console.error("Login failed:", result.error); // to change!!
+      //display a user-friendly error message in the UI (e.g., "Invalid credentials").
+      // Show a Loading State
+      //If the API takes time, add a loading state to prevent multiple submissions.
+    }
   }
 
   if (isKidRole && isRegister) {

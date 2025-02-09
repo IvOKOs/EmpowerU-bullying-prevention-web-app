@@ -9,23 +9,40 @@ const authSlice = createSlice({
   name: "auth",
   initialState: initialAuthState,
   reducers: {
-    authenticate() {},
+    authenticate(state) {
+      state.isAuthenticated = true;
+    },
   },
 });
 
-export function sendUserData(userData) {
+export function sendUserData(userData, isRegister) {
   return async (dispatch) => {
     try {
-      const response = await fetch("http://localhost:5000/api/authenticate", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
-      });
+      console.log("here baby");
+      const response = await fetch(
+        `${
+          isRegister
+            ? "https://localhost:7103/api/auth/register"
+            : "https://localhost:7103/api/auth/login"
+        }`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(userData),
+        }
+      );
 
-      const data = await response.json();
-    } catch (error) {}
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+      const result = await response.json();
+
+      return result;
+    } catch (error) {
+      return { error: error.message };
+    }
   };
 }
 

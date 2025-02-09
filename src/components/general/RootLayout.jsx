@@ -3,10 +3,18 @@ import { motion } from "framer-motion";
 import animations from "../../animations/animationTypes";
 import Navigation from "./Navigation";
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 export default function RootLayout() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const [role, setRole] = useState(null);
   const location = useLocation();
+
+  // should I use useEffect() and useState() here or just directly extract the role in a const????
+  useEffect(() => {
+    const storedRole = localStorage.getItem("role");
+    setRole(storedRole);
+  }, []);
 
   return (
     <>
