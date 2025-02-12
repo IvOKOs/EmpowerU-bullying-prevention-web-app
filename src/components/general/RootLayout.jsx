@@ -1,25 +1,45 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import animations from "../../animations/animationTypes";
 import Navigation from "./Navigation";
 import { useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 export default function RootLayout() {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
-  const [role, setRole] = useState(null);
   const location = useLocation();
+  const navigate = useNavigate();
+  const storedRole = sessionStorage.getItem("role");
 
-  // should I use useEffect() and useState() here or just directly extract the role in a const????
   useEffect(() => {
-    const storedRole = localStorage.getItem("role");
-    setRole(storedRole);
-  }, []);
+    if (
+      isAuthenticated &&
+      (location.pathname === "/" ||
+        location.pathname === "/login" ||
+        location.pathname === "/register")
+    ) {
+      navigate("/dashboard", { replace: true });
+    }
+    if (!isAuthenticated && location.pathname === "/dashboard") {
+      navigate("/", { replace: true });
+    }
+  }, [isAuthenticated, location.pathname, navigate]);
 
   return (
     <>
-      <Navigation navBarStyle="unauthorized">
-        {isAuthenticated && undefined}
+      <Navigation>
+        {isAuthenticated && (
+          <>
+            <Link to="/" className="link">
+              ???
+            </Link>
+            <div className="auth-box">
+              <Link to="/" className="nav-link">
+                Log Out
+              </Link>
+            </div>
+          </>
+        )}
         {!isAuthenticated && (
           <div className="auth-box">
             <Link to="/register" className="nav-link">

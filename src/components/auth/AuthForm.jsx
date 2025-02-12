@@ -6,14 +6,15 @@ import {
   isPasswordValid,
   passwordsMatch,
 } from "../../util/validation";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { sendUserData, authActions } from "../../store/auth-slice";
 import { useNavigate } from "react-router-dom";
 
 export default function AuthForm({ isKidRole = false, isRegister }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const [formErrors, setFormErrors] = useState({});
   const [formData, setFormData] = useState({
     username: "",
@@ -25,6 +26,12 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
     role: 0,
   });
   let content;
+
+  useEffect(() => {
+    if (isAuthenticated) {
+      navigate("/dashboard", { replace: true });
+    }
+  }, [isAuthenticated, navigate]);
 
   function validate(name, value) {
     let error = "";
@@ -88,11 +95,13 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
     const result = await dispatch(sendUserData(formData, isRegister));
     if (!result.error) {
       if (result.access_token) {
-        localStorage.setItem("token", result.access_token);
-        localStorage.setItem("role", result.role);
+        sessionStorage.setItem("token", result.access_token);
+        sessionStorage.setItem("role", result.role);
+      } else{
+        // display error message... ask gpt if this case is even possible
       }
       dispatch(authActions.authenticate());
-      navigate("/dashboard");
+      navigate("/dashboard", { replace: true });
     } else {
       console.error("Login failed:", result.error); // to change!!
       //display a user-friendly error message in the UI (e.g., "Invalid credentials").
