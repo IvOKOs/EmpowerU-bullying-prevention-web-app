@@ -1,9 +1,9 @@
 import styles from "./Dashboard.module.css";
-import cloud1 from "../assets/cloud1.png";
-import cloud2 from "../assets/cloud2.png";
-import meadows from "../assets/meadows.png";
-import nerdyGirl from "../assets/nerdy-girl.png";
-import peekingGirl from "../assets/peeking-girl.png";
+import cloud1 from "../../assets/cloud1.png";
+import cloud2 from "../../assets/cloud2.png";
+import meadows from "../../assets/meadows.png";
+import nerdyGirl from "../../assets/nerdy-girl.png";
+import peekingGirl from "../../assets/peeking-girl.png";
 import { useState } from "react";
 
 export default function Dashboard() {

@@ -10,6 +10,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { sendUserData, authActions } from "../../store/auth-slice";
 import { useNavigate } from "react-router-dom";
+import Input from "./Input";
 
 export default function AuthForm({ isKidRole = false, isRegister }) {
   const dispatch = useDispatch();
@@ -97,7 +98,7 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
       if (result.access_token) {
         sessionStorage.setItem("token", result.access_token);
         sessionStorage.setItem("role", result.role);
-      } else{
+      } else {
         // display error message... ask gpt if this case is even possible
       }
       dispatch(authActions.authenticate());
@@ -110,130 +111,61 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
     }
   }
 
-  if (isKidRole && isRegister) {
+  if (isRegister) {
     content = (
       <>
-        <div className={styles.inputBox}>
-          <input
-            required
-            className={styles.inputReg}
-            type="text"
-            name="username"
-            onChange={handleChange}
-            placeholder="Enter your unique username..."
-          />
-          {formErrors.username && (
-            <p className={styles.error}>{formErrors.username}</p>
-          )}
-        </div>
-        <div className={styles.inputBox}>
-          <input
-            required
-            className={styles.inputReg}
-            type="email"
-            name="email"
-            onChange={handleChange}
-            placeholder="Enter your email..."
-          />
-          {formErrors.email && (
-            <p className={styles.error}>{formErrors.email}</p>
-          )}
-        </div>
+        {isKidRole && (
+          <div className={styles.inputBox}>
+            <Input
+              isRegister
+              isName={false}
+              type="text"
+              name="username"
+              placeholder="Enter your unique username..."
+              handleChange={handleChange}
+              formErrors={formErrors}
+            />
+          </div>
+        )}
         <div className={styles.nameBox}>
           <div className={styles.nameInputBox}>
-            <input
-              className={styles.inputReg}
+            <Input
+              isRegister
+              isName={true}
               type="text"
               name="name"
-              onChange={handleChange}
               placeholder="Enter your name..."
+              handleChange={handleChange}
+              formErrors={formErrors}
+              required={isKidRole ? false : true}
             />
-            <div className={styles.infoBox}>
-              <span className={styles.tooltip}>
-                Your name will only be visible to you on your profile page. No
-                one else can see it. 😉
-              </span>
-              <span className={styles.question}>?</span>
-            </div>
+            {isKidRole && (
+              <div className={styles.infoBox}>
+                <span className={styles.tooltip}>
+                  Your name will only be visible to you on your profile page. No
+                  one else can see it. 😉
+                </span>
+                <span className={styles.question}>?</span>
+              </div>
+            )}
           </div>
           <p>
-            (Optional){" "}
+            {isKidRole ? "(Optional) " : undefined}
             {formErrors.name && (
               <span className={styles.error}>{formErrors.name}</span>
             )}
           </p>
         </div>
         <div className={styles.inputBox}>
-          <div className={styles.passBox}>
-            <input
-              required
-              className={styles.inputReg}
-              type="password"
-              name="password"
-              onChange={handleChange}
-              placeholder="Enter your password..."
-            />
-            <div className={styles.infoBox}>
-              <span className={styles.tooltip}>
-                To keep your account super safe, pick a password that's at least
-                8 characters long. 🔒😊
-              </span>
-              <span className={styles.question}>?</span>
-            </div>
-          </div>
-          {formErrors.password && (
-            <p className={styles.error}>{formErrors.password}</p>
-          )}
-        </div>
-        <div className={styles.inputBox}>
-          <div className={styles.passBox}>
-            <input
-              required
-              className={styles.inputReg}
-              type="password"
-              name="passwordRe"
-              onChange={handleChange}
-              placeholder="Re-enter your password..."
-            />
-            <div className={styles.infoBox}>
-              <span className={styles.tooltip}>
-                Just making sure you're not a sneaky robot. 🤖
-              </span>
-              <span className={styles.question}>?</span>
-            </div>
-          </div>
-          {formErrors.passwordRe && (
-            <p className={styles.error}>{formErrors.passwordRe}</p>
-          )}
-        </div>
-      </>
-    );
-  } else if (!isKidRole && isRegister) {
-    content = (
-      <>
-        <div className={styles.inputBox}>
-          <input
-            required
-            className={styles.inputReg}
-            type="text"
-            name="name"
-            onChange={handleChange}
-            placeholder="Enter your name..."
-          />
-          {formErrors.name && <p className={styles.error}>{formErrors.name}</p>}
-        </div>
-        <div className={styles.inputBox}>
-          <input
-            required
-            className={styles.inputReg}
+          <Input
+            isRegister
+            isName={false}
             type="email"
             name="email"
-            onChange={handleChange}
             placeholder="Enter your email..."
+            handleChange={handleChange}
+            formErrors={formErrors}
           />
-          {formErrors.email && (
-            <p className={styles.error}>{formErrors.email}</p>
-          )}
         </div>
         <div className={styles.inputBox}>
           <div className={styles.passBox}>
@@ -247,8 +179,9 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
             />
             <div className={styles.infoBox}>
               <span className={styles.tooltip}>
-                To keep your account safe, pick a password that's at least 8
-                characters long.
+                {isKidRole
+                  ? "To keep your account super safe, pick a password that's at least 8 characters long. 🔒😊"
+                  : "To keep your account safe, pick a password that's at least 8 characters long."}
               </span>
               <span className={styles.question}>?</span>
             </div>
@@ -269,7 +202,9 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
             />
             <div className={styles.infoBox}>
               <span className={styles.tooltip}>
-                Just making sure you're not a robot.
+                {isKidRole
+                  ? "Just making sure you're not a sneaky robot. 🤖"
+                  : "Making sure you're not a robot."}
               </span>
               <span className={styles.question}>?</span>
             </div>
@@ -283,32 +218,24 @@ export default function AuthForm({ isKidRole = false, isRegister }) {
   } else {
     content = (
       <>
-        <div className={styles.inputBox}>
-          <input
-            required
-            className={styles.inputLogin}
-            type="email"
-            name="email"
-            onChange={handleChange}
-            placeholder="Enter your email..."
-          />
-          {formErrors.email && (
-            <p className={styles.error}>{formErrors.email}</p>
-          )}
-        </div>
-        <div className={styles.inputBox}>
-          <input
-            required
-            className={styles.inputLogin}
-            type="password"
-            name="password"
-            onChange={handleChange}
-            placeholder="Enter your password..."
-          />
-          {formErrors.password && (
-            <p className={styles.error}>{formErrors.password}</p>
-          )}
-        </div>
+        <Input
+          isRegister
+          isName={false}
+          type="email"
+          name="email"
+          placeholder="Enter your email..."
+          handleChange={handleChange}
+          formErrors={formErrors}
+        />
+        <Input
+          isRegister
+          isName={false}
+          type="password"
+          name="password"
+          placeholder="Enter your password..."
+          handleChange={handleChange}
+          formErrors={formErrors}
+        />
         <button className={styles.btnLogin}>Let me in!</button>
       </>
     );

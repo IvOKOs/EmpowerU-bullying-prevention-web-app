@@ -1,0 +1,21 @@
+.inputReg {
+  height: 3.5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9px;
+  border: 1px solid #000;
+}
+
+.inputLogin {
+  height: 3.5rem;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9px;
+  border: 1px solid #000;
+}
+
+.error {
+  font-size: 1.2rem;
+  color: red;
+}

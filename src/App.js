@@ -6,7 +6,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PageTransition from "./pages/PageTransition";
 import UnauthorizedPage from "./pages/UnauthorizedPage";
-import Dashboard from "./pages/Dashboard";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 const router = createBrowserRouter([
   {
